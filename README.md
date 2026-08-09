@@ -1,10 +1,17 @@
-# Journey to STEAM AI Chatbot MVP
+# J2S Support Bot
 
-An AI-powered chatbot for **journeytosteam.com** that handles parent inquiries 24/7 using Anthropic Claude AI, integrated into Squarespace via an embeddable widget, with SMS capabilities through Twilio, and an admin dashboard for conversation management.
+An AI customer-support system with an embeddable widget, admin dashboard, PostgreSQL, and optional SMS.
 
----
+| Field | Value |
+| --- | --- |
+| Focus | Conversational AI |
+| Status | Active portfolio project |
 
-## Quick Start
+## Overview
+
+An AI customer-support system with an embeddable widget, admin dashboard, PostgreSQL, and optional SMS.
+
+## Getting started
 
 ### Prerequisites
 - **Node.js 18+** and npm
@@ -16,7 +23,6 @@ An AI-powered chatbot for **journeytosteam.com** that handles parent inquiries 2
 
 ```bash
 git clone <your-repo-url>
-cd J2S-Bot
 
 # Install backend dependencies
 cd backend && npm install
@@ -76,63 +82,63 @@ cd widget && npm run dev
 
 ---
 
-## Project Structure
+## Architecture
 
 ```
 J2S-Bot/
-├── backend/                    # Node.js/Express API server
-│   ├── src/
-│   │   ├── server.js           # Express app entry point
-│   │   ├── seed.js             # Database seeding script
-│   │   ├── models/
-│   │   │   └── database.js     # PostgreSQL connection & schema
-│   │   ├── routes/
-│   │   │   ├── chat.js         # POST /api/chat - web chat endpoint
-│   │   │   ├── sms.js          # POST /api/sms/webhook - Twilio webhook
-│   │   │   ├── auth.js         # POST /api/auth/login - authentication
-│   │   │   ├── admin.js        # GET /api/admin/* - dashboard data
-│   │   │   └── knowledgeBase.js # CRUD /api/knowledge-base
-│   │   ├── services/
-│   │   │   ├── claude.js       # Anthropic Claude API integration
-│   │   │   ├── guardrails.js   # Input/output safety filters
-│   │   │   └── conversation.js # Conversation & lead management
-│   │   └── middleware/
-│   │       └── auth.js         # JWT authentication middleware
-│   ├── .env.example            # Environment variable template
-│   └── package.json
-├── frontend/                   # React admin dashboard
-│   ├── src/
-│   │   ├── main.jsx            # React entry point
-│   │   ├── App.jsx             # Router & route definitions
-│   │   ├── components/
-│   │   │   └── Layout.jsx      # Navigation layout wrapper
-│   │   ├── pages/
-│   │   │   ├── LoginPage.jsx   # Admin login
-│   │   │   ├── DashboardPage.jsx # Metrics overview
-│   │   │   ├── ConversationsPage.jsx # Conversation browser
-│   │   │   ├── LeadsPage.jsx   # Lead management & export
-│   │   │   ├── KnowledgeBasePage.jsx # KB editor
-│   │   │   └── SettingsPage.jsx # Account settings
-│   │   ├── context/
-│   │   │   └── AuthContext.jsx # Authentication state
-│   │   ├── hooks/
-│   │   │   └── usePolling.js   # Auto-refresh hook
-│   │   └── services/
-│   │       └── api.js          # API client with token refresh
-│   └── package.json
-├── widget/                     # Embeddable chat widget
-│   ├── src/
-│   │   ├── index.jsx           # Preact chat widget component
-│   │   └── styles/
-│   │       └── widget.css      # Scoped widget styles
-│   ├── vite.config.js          # Build config (IIFE bundle)
-│   └── package.json
-└── docs/                       # Documentation
-    ├── ARCHITECTURE.md
-    ├── DEPLOYMENT_GUIDE.md
-    ├── ADMIN_GUIDE.md
-    ├── KNOWLEDGE_BASE_GUIDE.md
-    └── FUTURE_IMPROVEMENTS.md
+ backend/                    # Node.js/Express API server
+    src/
+       server.js           # Express app entry point
+       seed.js             # Database seeding script
+       models/
+          database.js     # PostgreSQL connection & schema
+       routes/
+          chat.js         # POST /api/chat - web chat endpoint
+          sms.js          # POST /api/sms/webhook - Twilio webhook
+          auth.js         # POST /api/auth/login - authentication
+          admin.js        # GET /api/admin/* - dashboard data
+          knowledgeBase.js # CRUD /api/knowledge-base
+       services/
+          claude.js       # Anthropic Claude API integration
+          guardrails.js   # Input/output safety filters
+          conversation.js # Conversation & lead management
+       middleware/
+           auth.js         # JWT authentication middleware
+    .env.example            # Environment variable template
+    package.json
+ frontend/                   # React admin dashboard
+    src/
+       main.jsx            # React entry point
+       App.jsx             # Router & route definitions
+       components/
+          Layout.jsx      # Navigation layout wrapper
+       pages/
+          LoginPage.jsx   # Admin login
+          DashboardPage.jsx # Metrics overview
+          ConversationsPage.jsx # Conversation browser
+          LeadsPage.jsx   # Lead management & export
+          KnowledgeBasePage.jsx # KB editor
+          SettingsPage.jsx # Account settings
+       context/
+          AuthContext.jsx # Authentication state
+       hooks/
+          usePolling.js   # Auto-refresh hook
+       services/
+           api.js          # API client with token refresh
+    package.json
+ widget/                     # Embeddable chat widget
+    src/
+       index.jsx           # Preact chat widget component
+       styles/
+           widget.css      # Scoped widget styles
+    vite.config.js          # Build config (IIFE bundle)
+    package.json
+ docs/                       # Documentation
+     ARCHITECTURE.md
+     DEPLOYMENT_GUIDE.md
+     ADMIN_GUIDE.md
+     KNOWLEDGE_BASE_GUIDE.md
+     FUTURE_IMPROVEMENTS.md
 ```
 
 ---
@@ -202,3 +208,14 @@ Paste this in Squarespace → Settings → Advanced → Code Injection → Foote
 ## License
 
 Proprietary - Journey to STEAM LLC
+
+## Repository
+
+```bash
+git clone https://github.com/hasan0v/j2s-support-bot.git
+cd j2s-support-bot
+```
+
+## Status
+
+Active portfolio project.
