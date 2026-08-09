@@ -7,6 +7,8 @@ An AI customer-support system with an embeddable widget, admin dashboard, Postgr
 | Focus | Conversational AI |
 | Status | Active portfolio project |
 
+**Engineering notes:** [Architecture](docs/ARCHITECTURE.md) · [Evaluation plan](docs/EVALUATION.md) · [Guardrails](docs/Guardrails.md) · [Security](SECURITY.md) · [Quality workflow](.github/workflows/quality.yml)
+
 ## Overview
 
 An AI customer-support system with an embeddable widget, admin dashboard, PostgreSQL, and optional SMS.
